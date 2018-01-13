@@ -21,8 +21,12 @@ require(ggfortify)
 require(ggplot2)
 ```
 ## Visualization
-![Lolipop Chart for the weighted Accuracy of all the different methods](plots/Accuracy_Stat.png)
+
 ![Lolipop Chart for the weighted Accuracy of all the different methods](plots/Accuracy_Stat.png "Lolipop Chart for the weighted Accuracy of all the different methods")
+![Box Plot of the Accuracies of different items under different methods](plots/BoxPlot.png "Box Plot of the Accuracies of different items under different methods")
+![Ridge Plot of the Accuracies of different items under different methods](plots/RidgePlot.png "Ridge Plot of the Accuracies of different items under different methods")
+![Coverage of the different forecasting methodologies](plots/Coverage_short.png "Coverage of the different forecasting methodologies")
+![Complexity vs Accuracy](plots/Stat_FC_Matrix.png "Complexity vs Accuracy")
 
 ## Authors
 
