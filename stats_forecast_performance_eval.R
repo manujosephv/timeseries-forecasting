@@ -8,7 +8,7 @@ library(ggfortify)
 library(ggplot2)
 library(readxl)
 
-WORKING_DIRECTORY = 'C:\\Users\\310228580\\OneDrive - Philips\\Work\\Tradestock\\Forecasting'
+WORKING_DIRECTORY = 'xxxx'
 PLOT_FOLDER = 'plots_Test'
 FORECAST_FOLDER = "Forecast_Test"
 FORCE_RELOAD_FLAG = FALSE
@@ -82,26 +82,26 @@ forecast_level_grouped_df %>%
   ) -> agg_measures_df
 
 # names = c('GroupBlue3','BrightAqua','BrightGreen','BrightOrange','BrightPink','GroupBlue2','DarkAqua','DarkGreen','DarkOrange','LightAqua','LightGreen','LightOrange')
-# philips_palette = c('#005A8B','#1E9D8B','#5B8F22','#E98300','#EC4371','#0089C4','#156570','#00693C','#983222','#5BBBB7','#B6BF00','#EEAF00')
-# names(philips_palette) = names
+# my_palette = c('#005A8B','#1E9D8B','#5B8F22','#E98300','#EC4371','#0089C4','#156570','#00693C','#983222','#5BBBB7','#B6BF00','#EEAF00')
+# names(my_palette) = names
 
 
 names = c('BrightBlue','BrightAqua','BrightGreen','BrightOrange','BrightPink','BrightPurple','DarkBlue','DarkAqua','DarkGreen','DarkOrange','DarkPink','DarkPurple')
-philips_palette = c('#0066a1','#1e9d8b','#5b8f22','#e98300','#ec4371','#7d0063','#003478','#156570','#00693c','#983222','#91004b','#631d76')
-# names(philips_palette) = names
+my_palette = c('#0066a1','#1e9d8b','#5b8f22','#e98300','#ec4371','#7d0063','#003478','#156570','#00693c','#983222','#91004b','#631d76')
+# names(my_palette) = names
 
 
-# philips_palette_complete = c('#0b5ed7','#0b2265','#0039a6','#005a8b','#0089c4','#72b5cc','#0f204b','#003478','#0066a1','#7ba4d9','#b3c8e6','#22505f','#156570','#1e9d8b','#5bbbb7','#cae3e9','#024731','#00693c','#5b8f22','#b6bf00','#e0e96e','#772432','#983222','#e98300','#eeaf00','#fbd476','#91004b','#ec4371','#e59aaa','#e9c5cb','#42145f','#631d76','#7d0063','#b390bb','#dbcfe9','#000000','#252525','#5d5d5d','#888888','#b9b9b9','#cccccc','#e0e0e0','#efefef','#ffffff','#cd202c','#252525','#888888','#cccccc','#00f010')
+# my_palette_complete = c('#0b5ed7','#0b2265','#0039a6','#005a8b','#0089c4','#72b5cc','#0f204b','#003478','#0066a1','#7ba4d9','#b3c8e6','#22505f','#156570','#1e9d8b','#5bbbb7','#cae3e9','#024731','#00693c','#5b8f22','#b6bf00','#e0e96e','#772432','#983222','#e98300','#eeaf00','#fbd476','#91004b','#ec4371','#e59aaa','#e9c5cb','#42145f','#631d76','#7d0063','#b390bb','#dbcfe9','#000000','#252525','#5d5d5d','#888888','#b9b9b9','#cccccc','#e0e0e0','#efefef','#ffffff','#cd202c','#252525','#888888','#cccccc','#00f010')
 # names_complete = c('colorPWordmarkBlue','colorPGroupBlue5','colorPGroupBlue4','colorPGroupBlue3','colorPGroupBlue2','colorPGroupBlue1','colorPVeryDarkBlue','colorPDarkBlue','colorPBrightBlue','colorPLightBlue','colorPVeryLightBlue','colorPVeryDarkAqua','colorPDarkAqua','colorPBrightAqua','colorPLightAqua','colorPVeryLightAqua','colorPVeryDarkGreen','colorPDarkGreen','colorPBrightGreen','colorPLightGreen','colorPVeryLightGreen','colorPVeryDarkOrange','colorPDarkOrange','colorPBrightOrange','colorPLightOrange','colorPVeryLightOrange','colorPDarkPink','colorPBrightPink','colorPLightPink','colorPVeryLightPink','colorPVeryDarkPurple','colorPDarkPurple','colorPBrightPurple','colorPLightPurple','colorPVeryLightPurple','colorPBlack','colorPEnricher1','colorPEnricher2','colorPEnricher3','colorPEnricher4','colorPEnricher5','colorPEnricher6','colorPEnricher7','colorPWhite','colorPEnricherRed','colorPDark','colorPMedium','colorPLight','colorPQlik')
-# names(philips_palette_complete) = names_complete
+# names(my_palette_complete) = names_complete
 
 
 # Density plots
 ggplot(forecast_level_grouped_df, aes(x=MAPE, fill=order_labels_short)) + geom_density(alpha=0.3)+
   scale_x_continuous(name="MAPE", breaks = c(25,50,100), limits = c(0,100))+
   labs(x="MAPE", y="% of AGs", title="Density Plot MAPE - AG")+
-  # scale_color_manual(values = philips_palette)+
-  # scale_fill_manual(values = philips_palette) +
+  # scale_color_manual(values = my_palette)+
+  # scale_fill_manual(values = my_palette) +
   theme(legend.title=element_blank())+
   guides(fill=guide_legend(title=NULL))
   
@@ -126,8 +126,8 @@ ggplot(forecast_level_grouped_df %>% filter(!is.infinite(MAPE),!is.na(MAPE)), ae
   labs(x="MAPE", y="", title="Ridgeline Plot MAPE - AG")+
   scale_y_discrete(limits=order_labels_short)+
   theme(legend.position="none")+
-  scale_color_manual(values = philips_palette)+
-  scale_fill_manual(values = philips_palette) +
+  scale_color_manual(values = my_palette)+
+  scale_fill_manual(values = my_palette) +
   theme(legend.position = 'none',
         text = element_text(family ='Lato Light', color='black'), 
         title = element_text(size=14, hjust=0.5, vjust=0.5, lineheight = 2),
@@ -165,8 +165,8 @@ ggplot(forecast_level_grouped_df, aes(x=order_labels_short, y=MAPE, fill=order_l
   coord_flip()+
   stat_summary(fun.y=mean, geom="point", shape=17, size=2)+
   labs(x='',title='Box Plot of AG level MAPE(s)')+
-  scale_color_manual(values = philips_palette)+
-  scale_fill_manual(values = philips_palette)+
+  scale_color_manual(values = my_palette)+
+  scale_fill_manual(values = my_palette)+
   theme(legend.position = 'none',
         text = element_text(family ='Lato Light', color='black'), 
         title = element_text(size=14, hjust=0.5, vjust=0.5, lineheight = 2),
@@ -214,7 +214,7 @@ ggplot(agg_measures_df, aes(x=order_labels_short, y=100-wMAPE, label = paste0(ro
   scale_x_discrete(limits=order_labels_short, labels = str_wrap(order_labels_short, width = 5))+
   scale_y_continuous(limits = c(50,100),expand = c(0, 0))+
   labs(x="", y="", title="Accuracy (wMAPE) of different Statistical Forecast Methods")+
-  scale_color_manual(values = philips_palette)+
+  scale_color_manual(values = my_palette)+
   theme(legend.position = 'none',
         text = element_text(family ='Lato Light', color='black'), 
         title = element_text(size=14, hjust=0.5, vjust=0.5, lineheight = 2),
@@ -253,7 +253,7 @@ library(ggrepel)
 ################################
 
 order_labels_short_1 = c('Seas. Naïve', 'Theta', 'Exponential', 'ARIMA', 'Seas. + ARIMA', "Seas. + Theta", 'Seas. + Exp', 'Neural Net', 'Seas. + Neural Net')
-t=philips_palette
+t=my_palette
 names(t) = names
 scatter_palette = c(t['DarkBlue'],t["DarkGreen"], t["BrightAqua"], t["BrightBlue"],t["DarkAqua"],t["DarkPink"],t["BrightOrange"],t["BrightGreen"],t["BrightPink"])
 names(scatter_palette) = order_labels_short_1
@@ -300,7 +300,7 @@ dev.off()
 
 
 order_labels_short_1 = c('Seas. Naïve', 'Theta', 'Exponential', 'ARIMA', 'Seas. + ARIMA', "Seas. + Theta", 'Seas. + Exp', 'Neural Net', 'Seas. + Neural Net')
-t=philips_palette
+t=my_palette
 names(t) = names
 t['Grey'] = '#e5e3e3'
 hightlight_palette = c(t['Grey'],t["Grey"], t["Grey"], t["Grey"],t["Grey"],t["Grey"],t["BrightOrange"],t["Grey"],t["BrightPink"])

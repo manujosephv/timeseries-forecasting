@@ -11,7 +11,7 @@ library(forecast)
 library(ggfortify)
 library(ggplot2)
 
-WORKING_DIRECTORY = 'C:\\Users\\310228580\\OneDrive - Philips\\Work\\Tradestock\\Forecasting'
+WORKING_DIRECTORY = 'xxxxx'
 DATA_LOAD = FALSE
 OUTPUT_FOLDER = 'Forecast_Test'
 FEATHER_FOLDER = 'Feather_Test'
