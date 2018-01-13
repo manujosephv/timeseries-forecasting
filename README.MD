@@ -21,8 +21,8 @@ require(ggfortify)
 require(ggplot2)
 ```
 ## Visualization
-![Lolipop Chart for the weighted Accuracy of all the different methods](plots/Accuracy Stat.png)
-
+![Lolipop Chart for the weighted Accuracy of all the different methods](plots/Accuracy_Stat.png)
+![Lolipop Chart for the weighted Accuracy of all the different methods](plots/Accuracy_Stat.png "Lolipop Chart for the weighted Accuracy of all the different methods")
 
 ## Authors
 
